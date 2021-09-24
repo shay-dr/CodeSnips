@@ -9,32 +9,36 @@ public class MatchingBrackets {
 
         int countLeft = 0;
         int countRight = 0;
+        string response = null;
 
 
         //Init post
         System.out.println("Thank you for using MatchingBrackets /n" + "Please provide a string to be tested and press the 'Enter' key:");
         Scanner input = new Scanner(System.in);
 
-        //Obtain string and scan for brackets {,}.  Regex: /\{|\}/g
+        //Obtain string and scan / count bracket {,}.  Regex: /\{|\}/g
         String userInput = input.next();
 
         Pattern regex = Pattern.compile("{}");
 
-        if (regex.matcher(userInput).find()) {
-            Count();
-            return;
+        if (regex.matcher(userInput).find({)) {
+            countLeft ++;
+
+        }
+        if (regex.matcher(userInput).find(})) {
+            countRight ++;
+
         }
 
-
-        //Store brackets counts.
-
-
-
-        //Ensure that a bracket has a corresponding pair.
-
-
-
         //If all brackets have a matching pair, return true.  Else, return false.
+
+        if countLeft = countRight(
+                response  = True
+        )
+
+        //Response
+
+        System.out.println(response);
 
     }
 }
