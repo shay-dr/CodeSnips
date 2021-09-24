@@ -2,52 +2,53 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class MatchingBracketsTest {
+    MatchingBrackets doesItWork = new MatchingBrackets();
 
     @Test
     //{} - True
     public void requiredTest1() {
-        Assertions.assertTrue(5 == 5);
-        Assertions.assertFalse(5 == 4);
-
+        Assertions.assertTrue(doesItWork.isMatch("{}"));
     }
 
     @Test
     //}{ - False (closed bracket can't proceed all open brackets.)
     public void requiredTest2() {
-        Assertions.assertTrue(5 == 5);
-        Assertions.assertFalse(5 == 4);
-
+        Assertions.assertFalse(doesItWork.isMatch("}{"));
     }
 
     @Test
     //{{} - False (one bracket pair was not closed)
     public void requiredTest3() {
-        Assertions.assertTrue(5 == 5);
-        Assertions.assertFalse(5 == 4);
-
+        Assertions.assertFalse(doesItWork.isMatch("{{}"));
     }
 
     @Test
     //"" - True. (no brackets in the string will return True)
     public void requiredTest4() {
-        Assertions.assertTrue(5 == 5);
-        Assertions.assertFalse(5 == 4);
-
+        Assertions.assertTrue(doesItWork.isMatch(""));
     }
 
     @Test
     //{abc...xyz} - True (non-bracket characters are ignored appropriately)
     public void requiredTest5() {
-        Assertions.assertTrue(5 == 5);
-        Assertions.assertFalse(5 == 4);
+        Assertions.assertTrue(doesItWork.isMatch("{abc...xyz}"));
+    }
 
+    @Test
+    //{abc.ABC.123.xyz} - True (non-bracket characters are ignored appropriately)
+    public void numbersOrLettersTest5() {
+        Assertions.assertTrue(doesItWork.isMatch("{abc.ABC.123.xyz}"));
     }
 
     @Test
     //allows nested brackets
     public void nestedTest() {
-        Assertions.assertTrue(5 == 5);
-        Assertions.assertFalse(5 == 4);
-
+        Assertions.assertTrue(doesItWork.isMatch("{{}}"));
     }
+    @Test
+    //allows nested brackets with additional chars
+    public void nestedAndAdditionalCharsTest() {
+        Assertions.assertTrue(doesItWork.isMatch("{sdaf{231}ASDFA}"));
+    }
+
 }
