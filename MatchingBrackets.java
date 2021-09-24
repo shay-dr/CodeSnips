@@ -18,10 +18,10 @@ public class MatchingBrackets {
         //Obtain string and scan for brackets {,}.  Regex: /\{|\}/g
         String userInput = input.next();
 
-        Pattern regex = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]");
+        Pattern regex = Pattern.compile("{}");
 
-        if (regex.matcher(your_string).find()) {
-            Log.d("TTT, "SPECIAL CHARS FOUND");
+        if (regex.matcher(userInput).find()) {
+            Count();
             return;
         }
 
