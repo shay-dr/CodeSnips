@@ -1,21 +1,14 @@
-import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class MatchingBrackets {
 
-    public boolean isMatch(String args) {
+    public boolean isMatch(String input) {
 
         int countLeft = 0;
         int countRight = 0;
 
-
-        //Init post
-        System.out.println("Thank you for using MatchingBrackets \n" + "Please provide a string to be tested and press the 'Enter' key:");
-        Scanner input = new Scanner(System.in);
-
         //Obtain string and scan / count bracket {,}.
-        String userInput = input.next();
-        char[] letterPlace = userInput.toCharArray();
+        char[] letterPlace = input.toCharArray();
 
         for (char slotValue : letterPlace) {
             System.out.println(slotValue);
@@ -25,8 +18,8 @@ public class MatchingBrackets {
         //If all brackets have a matching pair, return true.  Else, return false.
 
 
-        //Response
-        return true;
+        //Response - update this!  Need to have order and matching as well.
+        return countLeft == countRight;
 
 
     }
