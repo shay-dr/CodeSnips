@@ -3,7 +3,7 @@ import java.util.regex.Pattern;
 
 public class MatchingBrackets {
 
-    public static void main(String[] args) {
+    public static boolean isMatch(String args) {
 
         int countLeft = 0;
         int countRight = 0;
@@ -26,6 +26,7 @@ public class MatchingBrackets {
 
 
         //Response
+        return true;
 
 
     }
