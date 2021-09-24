@@ -45,10 +45,30 @@ public class MatchingBracketsTest {
     public void nestedTest() {
         Assertions.assertTrue(doesItWork.isMatch("{{}}"));
     }
+
+    @Test
+    //allows nested brackets
+    public void dualNestedTest() {
+        Assertions.assertTrue(doesItWork.isMatch("{{}{}}"));
+    }
+
+    @Test
+    //allows nested brackets
+    public void dualNestedWithLetterOrNumberTest() {
+        Assertions.assertTrue(doesItWork.isMatch("{[{}aA1{}]}"));
+    }
+
+    @Test
+    //allows nested brackets
+    public void dualNestedWithASpecialCharTest() {
+        Assertions.assertTrue(doesItWork.isMatch("{[{},*$^{}]}"));
+    }
+
     @Test
     //allows nested brackets with additional chars
     public void nestedAndAdditionalCharsTest() {
         Assertions.assertTrue(doesItWork.isMatch("{sdaf{231}ASDFA}"));
     }
+
 
 }
