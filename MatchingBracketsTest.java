@@ -76,4 +76,9 @@ public class MatchingBracketsTest {
         Assertions.assertTrue(doesItWork.isMatch(" { sd af{ 231} ASljn DF123A}"));
     }
 
+    @Test
+    //multiple right brackets after a matched bracket
+    public void trailingMultipleRightBracketsTest() {
+        Assertions.assertFalse(doesItWork.isMatch("{}}}{{"));
+    }
 }

@@ -11,7 +11,7 @@ public class MatchingBrackets {
         char leftBracket = '{';
         char rightBracket = '}';
         char response = 'f';
-        boolean result = false;
+        Boolean result = null;
 
 
         //Obtain string, scan for, and count brackets {,}.
@@ -21,17 +21,18 @@ public class MatchingBrackets {
         for (char slotValue : letterPlace) {
             System.out.println(slotValue);
 
-                if (slotValue == rightBracket && bracketCounter <= 0) {
-                  result = false;
-                }
-                else
-                if (slotValue == rightBracket) {
-                    bracketCounter--;
-                }
+            if (slotValue == rightBracket && bracketCounter <= 0) {
+                bracketCounter = -1;
+                result = false;
+                break;
+            }
+            if (slotValue == rightBracket) {
+                bracketCounter--;
+            }
 
-                if (bracketCounter <= 0) {
-                    result = false;
-                }
+            if (bracketCounter <= 0) {
+                result = false;
+            }
             if (slotValue == leftBracket) {
                 bracketCounter++;
             }
