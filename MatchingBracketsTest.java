@@ -81,4 +81,10 @@ public class MatchingBracketsTest {
     public void trailingMultipleRightBracketsTest() {
         Assertions.assertFalse(doesItWork.isMatch("{}}}{{"));
     }
+
+    @Test
+    //Extra left brackets after a matched bracket
+    public void trailingLeftMultipleRightBracketsTest() {
+        Assertions.assertFalse(doesItWork.isMatch("{}{{}}{"));
+    }
 }

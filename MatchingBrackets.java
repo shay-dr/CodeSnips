@@ -11,31 +11,36 @@ public class MatchingBrackets {
         Boolean result = null;
 
 
-        //Obtain string, scan for, and count brackets {,}.
+        // Obtain string and identify index to char.
         char[] letterPlace = input.toCharArray();
 
-
+        // Check for
         for (char slotValue : letterPlace) {
-            System.out.println(slotValue);
-
+            // If first bracket in the string is a right bracket, return false.
             if (slotValue == rightBracket && bracketCounter <= 0) {
                 bracketCounter = -1;
                 result = false;
                 break;
             }
+
+            // If bracket counter
             if (slotValue == rightBracket) {
-                bracketCounter--;
+                bracketCounter --;
+            }
+            if (slotValue == leftBracket) {
+                bracketCounter ++;
             }
 
             if (bracketCounter <= 0) {
                 result = false;
             }
-            if (slotValue == leftBracket) {
-                bracketCounter++;
+
+            if (bracketCounter >= 0) {
+                result = false;
             }
         }
 
-        //If all brackets have a matching pair, response equals true.
+        // If all brackets have a matching pair, response equals true.
         if (bracketCounter == 0) {
             result = true;
         }
