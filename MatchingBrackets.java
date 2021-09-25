@@ -23,7 +23,7 @@ public class MatchingBrackets {
                 break;
             }
 
-            // If bracket counter
+            // Subtract 1 from bracketCounter for each right bracket, add 1 for each left bracket.
             if (slotValue == rightBracket) {
                 bracketCounter --;
             }
@@ -31,10 +31,10 @@ public class MatchingBrackets {
                 bracketCounter ++;
             }
 
+            // If bracket counter is not = 0, return false.
             if (bracketCounter <= 0) {
                 result = false;
             }
-
             if (bracketCounter >= 0) {
                 result = false;
             }
