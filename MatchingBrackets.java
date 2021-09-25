@@ -1,6 +1,5 @@
 import org.jetbrains.annotations.NotNull;
 
-
 public class MatchingBrackets {
 
     public boolean isMatch(@NotNull String input) {
@@ -25,10 +24,10 @@ public class MatchingBrackets {
 
             // Subtract 1 from bracketCounter for each right bracket, add 1 for each left bracket.
             if (slotValue == rightBracket) {
-                bracketCounter --;
+                bracketCounter--;
             }
             if (slotValue == leftBracket) {
-                bracketCounter ++;
+                bracketCounter++;
             }
 
             // If bracket counter is not = 0, return false.
