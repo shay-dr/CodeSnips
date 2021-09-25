@@ -7,17 +7,39 @@ public class MatchingBrackets {
 
         int countLeft = 0;
         int countRight = 0;
+        int bracketCounter = 0;
         char leftBracket = '{';
         char rightBracket = '}';
         char response = 'f';
+        boolean result = false;
 
 
         //Obtain string, scan for, and count brackets {,}.
         char[] letterPlace = input.toCharArray();
 
+
         for (char slotValue : letterPlace) {
             System.out.println(slotValue);
-            if (slotValue == leftBracket)
+
+                if (slotValue == rightBracket && bracketCounter <= 0) {
+                  result = false;
+                }
+                else
+                if (slotValue == rightBracket) {
+                    bracketCounter--;
+                }
+
+                if (bracketCounter <= 0) {
+                    result = false;
+                }
+            if (slotValue == leftBracket) {
+                bracketCounter++;
+            }
+
+        }
+
+
+/*            if (slotValue == leftBracket)
             {
                 countLeft ++;
             }
@@ -27,14 +49,15 @@ public class MatchingBrackets {
             }
 
         }
-
+*/
         //If all brackets have a matching pair, response equals true.
-        if (countLeft == countRight) {
-            response = 't';
+        if (bracketCounter == 0) {
+//          response = 't';
+            result = true;
         }
 
         //Verify that left bracket comes before right bracket.  --Needs work!
-
+/*
         for (char slotValue : letterPlace) {
             System.out.println(slotValue);
             if (slotValue == rightBracket  && slotValue < the slot value for leftBracket)
@@ -42,11 +65,12 @@ public class MatchingBrackets {
                 response ='f';
             }
         }
-
+*/
         //Response - update this to whatever the logic provides (not hard coded true).  Need to have order and matching as well.
-        if (response == 't')
-            return true;
-        if (response == 'f')
-            return false;
+//        if (response == 't')
+//            return true;
+//        if (response == 'f')
+//            return false;
+        return result;
     }
 }
