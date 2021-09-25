@@ -70,5 +70,10 @@ public class MatchingBracketsTest {
         Assertions.assertTrue(doesItWork.isMatch("{sdaf{231}ASDFA}"));
     }
 
+    @Test
+    //allows spaces
+    public void spacesTest() {
+        Assertions.assertTrue(doesItWork.isMatch(" { sd af{ 231} ASljn DF123A}"));
+    }
 
 }
